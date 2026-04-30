@@ -3,21 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+
     <title>Rock Paper Scissors</title>
+
   </head>
   <body>
-    <h3>Rock Paper Scissors Game</h3>
-    <!--rock---->
+    <header>
+    <h1>Rock Paper Scissors Game</h1>
+    <span >✌️🤞👍😶‍🌫️😖🙃</span>
 
-    <button onclick="playGame('rock')">Rock</button>
+    </header>
+    <!--rock---->
+<div class="stats-container">
+    <button id="rock-btn" class="move-button" onclick="playGame('rock')">
+    <div class="emoji">✊</div>
+    Rock
+</button>
 
     <!--paper---->
-    <button onclick="playGame('paper')">Paper</button>
+    <button id="paper-btn" class="move-button" onclick="playGame('paper')">
+    <div class="emoji">✋</div>
+    Paper
+</button>
 
     <!--scissors---->
-    <button onclick="playGame('scissors')">Scissors</button>
+    <button id="scissors-btn" class="move-button" onclick="playGame('scissors')">
+    <div class="emoji">✌️</div>
+    Scissors
+</button>
+</div>
 
-    <script src="script.js"></script>
+
+<p class="picks"></p>
+<p class="results"></p>
+<p class="score"></p>
+
+
+<button id="reset-btn" class="move-button" onclick="  
+score.wins = 0; 
+score.losses = 0; 
+score.ties = 0;
+localStorage.removeItem('score');
+updateScore(); ">
+    <div class="emoji">🔄</div>
+
+    Reset games
+</button> 
+    <script src="script.js"> </script>
 
     <p id="result"></p>
   </body>

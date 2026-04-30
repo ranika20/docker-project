@@ -1,0 +1,83 @@
+/* מבטיח שהרקע יכסה את כל גובה הדפדפן */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, oklab(95.514% 0 -0.00011), #c0c0c0); /* רקע עם גרדיאנט עדין */
+}
+header h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+header span {
+    display: block;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+/* השכבה החיצונית - הרקע המעומעם */
+
+/* עיצוב כללי לכל הכפתורים */
+.move-button {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px; /* מסגרת מעוגלת נעימה */
+    border: none;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white; /* טקסט לבן שיבלוט על הצבעים */
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s; /* אפקט תנועה חלק */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* צל שנותן עומק */
+}
+
+/* צבעים ייחודיים לכל כפתור */
+#rock-btn {
+    background-color: #555555; /* אפור לאבן */
+}
+
+#paper-btn {
+    background-color: #2196F3; /* כחול לנייר */
+}
+
+#scissors-btn {
+    background-color: #F44336; /* אדום למספריים */
+}
+
+/* אפקט כשמעבירים עכבר - הכפתור גדל מעט */
+.move-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* אפקט בלחיצה - הכפתור "שוקע" */
+.move-button:active {
+    transform: scale(0.95);
+}
+
+#reset-btn {
+    background-color: #f0ad4e; /* כתום אזהרה */
+    width: auto; /* שיתרחב לפי הטקסט */
+    padding: 0 20px;
+    height: 50px;
+}
+.stats-container {
+    display: flex;
+    justify-content: center;   
+        gap: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+.rock, .paper, .scissors {
+    font-size: 30px;
+    background-color: none;
+    border: none;
+}
+.picks, .results, .score {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+}

@@ -122,7 +122,60 @@
 //           res = comp === 'rock' ? 'you lose' : comp === 'paper' ? 'you win' : 'tie';
 //         }
 
-function number() {
-  console.log(5);
-}
-number();
+// function number() {
+//   console.log(5);
+// }
+// number();
+// Object.defineProperty(exports, "__esModule", { value: true });
+// exports.number = void 0;  
+// const user ={
+//   name: "dani",
+//   age: 25
+//   city: "ISRAEL"
+// }
+// console.log(user.name + " is " + user.age + " years old and lives in " + user.city + ".");  
+// function number() {
+//   console.log(5);
+
+// }
+// const score ={
+//   wins: 0,
+//   losses: 0,
+//   ties: 0
+// };
+// if (score.wins > 0) {
+// //   console.log("You win!");
+// const user = {
+//   name: "dani",
+//   age: 25,
+//   city: "ISRAEL"
+// };
+// console.log(`${user.name} is ${user.age} years old and lives in ${user.city}.`);
+// console.log(user);
+// const userString = JSON.stringify(user);
+// console.log(userString);
+// const userParsed = JSON.parse(userString);
+// console.log(userParsed);
+// const parseUser = JSON.parse(userString);
+// console.log(parseUser);
+
+
+////  console.log(document.body);
+    //  console.log(document.title = "אלמהו הכי מגניב בארץ?  המשחק הזה!");
+    //  console.log(document.body.innerHTML="מה שבאלי לעשות, זה לשנות את כל התוכן של הדף הזה, ולהחליף אותו במשפט הזה.  אני יכול לעשות את זה כי אני גאון!  אני יכול גם לשנות את הכותרת של הדף, ולכתוב שם משפט אחר.  אני יכול לעשות את כל זה כי אני גאון!  אני יכול גם להוסיף כפתור לדף הזה, שכשמשתמש ילחץ עליו, הוא יראה הודעה מיוחדת.  אני יכול לעשות את כל זה כי אני גאון! ");
+
+    //  document.querySelector()
+
+    console.log(document.body);
+    console.log(document.title = "אלמהו הכי מגניב בארץ?  המשחק הזה!");
+    console.log(document.body.innerHTML="מה שבאלי לעשות, זה לשנות את כל התוכן של הדף הזה, ולהחליף אותו במשפט הזה.  אני יכול לעשות את זה כי אני גאון!  אני יכול גם לשנות את הכותרת של הדף, ולכתוב שם משפט אחר.  אני יכול לעשות את כל זה כי אני גאון!  אני יכול גם להוסיף כפתור לדף הזה, שכשמשתמש ילחץ עליו, הוא יראה הודעה מיוחדת.  אני יכול לעשות את כל זה כי אני גאון! ");     
+    console.log(document.querySelector(". rock")); // בחירת האלמנט עם המחלקה "rock"
+    console.log(document.querySelector(".rock").innerHTML = "אלמהו הכי מגניב בארץ"); // שינוי הטקסט של האלמנט עם המחלקה "rock" ל-"Rock" 
+        const rockButton = document.querySelector(".rock");
+        rockButton.addEventListener("click", function() {
+          alert("You clicked the Rock button!");
+        }); 
+        rockButton.innerHTML = "אלמהו הכי מגניב בארץ"; // שינוי הטקסט של הכפתור ל-"Rock"
+        console.log(rockButton);
+
+
