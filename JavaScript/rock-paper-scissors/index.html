@@ -1,61 +1,45 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css">
-
     <title>Rock Paper Scissors</title>
-
-  </head>
-  <body>
+</head>
+<body>
     <header>
-    <h1>Rock Paper Scissors Game</h1>
-    <span >✌️🤞👍😶‍🌫️😖🙃</span>
-
+        <h1>Rock Paper Scissors Game</h1>
+        <span>✌️🤞👍😶‍🌫️😖🙃</span>
     </header>
-    <!--rock---->
-<div class="stats-container">
-    <button id="rock-btn" class="move-button" onclick="playGame('rock')">
-    <div class="emoji">✊</div>
-    Rock
-</button>
 
-    <!--paper---->
-    <button id="paper-btn" class="move-button" onclick="playGame('paper')">
-    <div class="emoji">✋</div>
-    Paper
-</button>
+    <!-- כפתורי הבחירה (למעלה) -->
+    <div class="stats-container">
+        <button id="rock-btn" class="move-button" onclick="playGame('rock')">
+            <div class="emoji">✊</div> Rock
+        </button>
+        <button id="paper-btn" class="move-button" onclick="playGame('paper')">
+            <div class="emoji">✋</div> Paper
+        </button>
+        <button id="scissors-btn" class="move-button" onclick="playGame('scissors')">
+            <div class="emoji">✌️</div> Scissors
+        </button>
+    </div>
 
-    <!--scissors---->
-    <button id="scissors-btn" class="move-button" onclick="playGame('scissors')">
-    <div class="emoji">✌️</div>
-    Scissors
-</button>
-</div>
+    <!-- אזור הניקוד והתוצאות (באמצע) -->
+    <div class="game-info">
+        <p class="results"></p>
+        <p class="picks"></p>
+        <p class="score"></p>
+    </div>
 
+    <!-- כפתורי בקרה (למטה) -->
+    <div class="reset-game-container">
+        <button id="reset-btn" class="move-button" onclick="resetScore()">
+            <div class="emoji">🔄</div> Reset games
+        </button> 
+        <button class="stats-auto-bton" onclick="autoPlay()">Auto Play</button>
+    </div>
 
-<p class="picks"></p>
-<p class="results"></p>
-<p class="score"></p>
-
-
-<button id="reset-btn" class="move-button" onclick="  
-score.wins = 0; 
-score.losses = 0; 
-score.ties = 0;
-localStorage.removeItem('score');
-updateScore(); ">
-    <div class="emoji">🔄</div>
-
-    Reset games
-</button> 
-<div class="reset-game-container">
-    <button class="stats-auto-bton" onclick="autoPlay()">
-        Auto Play
-    </button>
-    <script src="script.js"> </script>
-
-    <p id="result"></p>
-  </body>
+    <script src="script.js"></script>
+</body>
 </html>

@@ -144,3 +144,25 @@ number();
     stopButton.remove(); // הסרת כפתור העצירה
   });
   document.querySelector('.reset-game-container').appendChild(stopButton);
+
+function number2() {
+  console.log(10);
+}
+const result2 = number2();  
+console.log(5);
+console.log(result2);
+const number3 = () => {
+  console.log(15);
+}
+number3();
+const number4 = (num1 , num2) => num1+num1;
+const result4 = number4(5, 10);
+console.log(result4);
+const price = (price , quantity) => price * quantity;
+const totalPrice = price(10, 5);
+console.log(totalPrice);  
+console.log("The total price is: " + totalPrice);
+console.log("The total price is: " + price(20, 3)) ;
+
+
+
