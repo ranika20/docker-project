@@ -81,3 +81,13 @@ header span {
     font-size: 20px;
     margin-top: 20px;
 }
+.reset-game-container .stats-auto-bton {
+    text-align: center;
+    background-color: skyblue;
+    border: none;
+    color: black;
+    padding: 10px px;
+    margin-top: 30px;
+    font-size: 18px;
+    cursor: pointer;    
+}

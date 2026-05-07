@@ -126,3 +126,21 @@ function number() {
   console.log(5);
 }
 number();
+
+  const autoButton = document.getElementById('auto-button');
+  autoButton.style.display = 'none'; // הסתרת כפתור האוטומטי
+  const autoInterval = setInterval(() => {
+    const moves = ['rock', 'paper', 'scissors'];
+    const randomMove = moves[Math.floor(Math.random() * moves.length)];
+    playGame(randomMove);
+  }, 1000); 
+  // הוספת כפתור עצירת האוטומטי
+  const stopButton = document.createElement('button');
+  stopButton.textContent = 'Stop Auto';
+  stopButton.classList.add('stats-auto-bton');
+  stopButton.addEventListener('click', () => {
+    clearInterval(autoInterval); // עצירת האוטומטי
+    autoButton.style.display = 'inline-block'; // הצגת כפתור האוטומטי שוב
+    stopButton.remove(); // הסרת כפתור העצירה
+  });
+  document.querySelector('.reset-game-container').appendChild(stopButton);
