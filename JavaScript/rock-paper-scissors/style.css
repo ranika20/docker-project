@@ -45,8 +45,23 @@ header { margin-top: 20px; text-align: center; }
 }
 
 .results { font-size: 1.8rem; font-weight: bold; margin-bottom: 5px; }
-.picks { font-size: 1.1rem; color: #444; margin-bottom: 10px; }
+.picks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* רווח בין היד שלך ליד של המחשב */
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
 .score { font-size: 1.2rem; background: rgba(255,255,255,0.7); padding: 8px 20px; border-radius: 20px; }
+
+.result-emoji {
+    width: 100px; /* גודל התמונה כפי שרואים בתמונה שלך */
+    height: auto;
+    display: block; /* גורם לתמונה להיות בשורה נפרדת מהטקסט אם רוצים */
+    margin: 10px auto;
+}
 
 .reset-game-container {
     display: flex;
