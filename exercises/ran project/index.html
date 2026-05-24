@@ -77,3 +77,20 @@
     
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
+
+.board {
+    display: grid;
+    /* יוצר 20 עמודות שוות */
+    grid-template-columns: repeat(20, 20px); 
+    /* יוצר 20 שורות שוות */
+    grid-template-rows: repeat(20, 20px);
+    border: 5px solid white;
+    width: 400px; /* 20 כפול 20 פיקסלים */
+    height: 400px;
+}
+
+.board div {
+    width: 20px;
+    height: 20px;
+    border: 0.1px solid #333; /* מסגרת דקה מאוד כדי שנראה את הרשת */
+}
