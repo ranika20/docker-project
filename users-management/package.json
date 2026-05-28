@@ -1,0 +1,13 @@
+{
+  "name": "users-management",
+  "version": "1.0.0",
+  "description": "Node Server",
+  "license": "ISC",
+  "author": "Ran Karasenti",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+    
+  }
+}
