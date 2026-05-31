@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "express": "^5.2.1",
+    "mongos": "^0.0.0",
     "nodemon": "^3.0.1"
   }
 }
