@@ -1,9 +1,13 @@
+                                                
+
 const express = require('express');
+const connectdb = require('./config/db');
+require('dotenv').config();
 
 const app = express();
-const port = 3000;  
+const port = process.env.PORT || 3000;
 app.use(express.json());
-
+connectdb();
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
@@ -14,11 +18,7 @@ app.listen(port, () => {
 });
 
 app.get('/', (req, res) => {
-  const users = [
-    { id: 1, name: 'Alice' },
-    { id: 2, name: 'Bob' },
-    { id: 3, name: 'Charlie' }
-  ];
-  res.json(users);
-  res.send('Welcome to the User Management API!');
+res.send('Welcome to the User Management API!');
+  
+  
 });
