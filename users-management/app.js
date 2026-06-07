@@ -6,8 +6,15 @@ require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
+
 app.use(express.json());
+// מייבאים את הראוטר שכתבנו קודם
+const userRouters = require('./routes/users');
 connectdb();
+
+app.use('/api/users', userRouters);
+// app.use('/api/users', userRouters);
+// "http://localhost:3000/api/users"
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
