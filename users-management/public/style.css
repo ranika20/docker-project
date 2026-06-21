@@ -1,0 +1,173 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0; 
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding-bottom: 50px; /* נותן קצת מרווח נשימה בתחתית העמוד */
+}
+
+.header {
+    background: #333;
+    color: #fff;
+    padding: 30px 20px;
+    min-height: 70px;
+    border-bottom: #0779e4 3px solid;
+    text-align: center;
+}
+
+.header h1 {
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.header p {
+    color: #ccc;
+    margin-top: 10px;
+}
+
+/* --- כרטיסי סטטיסטיקה --- */
+.stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-left: #0779e4 5px solid;
+}
+
+.stat-card .number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.stat-card .label {
+    color: #777;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* --- טופס הוספת משתמש --- */
+#adduserForm {
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* דואג שהטופס ייראה טוב גם במסכים קטנים */
+}
+
+#adduserForm input {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#adduserForm button {
+    background: #0779e4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#adduserForm button:hover {
+    background: #055fa3;
+}
+
+/* --- גריד המשתמשים הדינמי --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* כרטיס משתמש אינדיבידואלי */
+.user-card {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user-card h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.user-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* כפתור מחיקה בתוך כרטיס */
+.delete-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.2s;
+}
+
+.delete-btn:hover {
+    background: #ff1a1a;
+}
+#adduserForm input:hover {
+    border-color: #00ff00; /* משנה את צבע המסגרת לכחול מעודן */
+}
+/* אפקט לכפתור הוספת משתמש (בתוך הטופס) */
+#adduserForm button:hover {
+    background-color: #218838; /* צבע ירוק כהה יותר (בהנחה שהוא ירוק) */
+    cursor: pointer; /* הופך את הסמן של העכבר ליד קטנה */
+}
+
+/* אפקט לכפתור המחיקה האדום */
+.delete-btn {
+    transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #23b5c8; /* צבע אדום כהה יותר */
+    cursor: pointer;
+}
+.user-card {
+    /* זה מבטיח שהאנימציה של המעבר תהיה חלקה ונעימה לעין */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.user-card:hover {
+    transform: translateY(-5px); /* מרים את הכרטיס ב-5 פיקסלים למעלה */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* מכהה ומגדיל את הצל */
+}

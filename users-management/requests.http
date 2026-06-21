@@ -4,6 +4,9 @@
 ### Get all users
 GET {{baseURL}}/api/users
 
+### 
+GET {{baseURL}}
+
 ### Get user by ID
 GET {{baseURL}}/api/users/{{userId}}
 ### Create a new user
@@ -11,10 +14,10 @@ POST {{baseURL}}/api/users/
 Content-Type: application/json
 
 {
-  "name": "rani",
-  "email": "ranik20@example.com",
+  "name": "ranik20",
+  "email": "ranik200@example.com",
   "password": "securepassword",
-  "age": 30
+  "age": 40
 } 
 
 
@@ -28,4 +31,4 @@ Content-Type: application/json
 }
 
 ### Delete a user
-DELETE {{baseURL}}/api/users/{{userId}} 
+DELETE {{baseURL}}/api/users/6a2337cf9aa21ebebd767f33

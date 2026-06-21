@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users Management</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1> RAN PROJECT - Users Management App</h1>
+        <p>
+          This is a simple user management application that allows you to add users and view their details. You can also see the total number of users and the average age of all users.   
+        </p>
+      </header>
+
+      <div class="stats">
+        <div class="stat-card">
+          <div class="number" id="total-users">0</div>
+          <div class="label">Total Users</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="number" id="avgAge">0</div>
+          <div class="label">Average Age</div>
+        </div>
+      </div>
+
+      <form id="adduserForm">
+        <input type="text" id="name" placeholder="Enter your name" required />
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+        />
+        <input type="number" id="age" placeholder="Enter your age" required />
+        <input type="password" id="password" placeholder="Enter your password" required />
+        <button type="submit">Add User</button>
+      </form>
+
+      <div class="grid" id="usersGrid"></div>
+    </div>
+    <script src="api.js"></script>
+  </body>
+</html>
