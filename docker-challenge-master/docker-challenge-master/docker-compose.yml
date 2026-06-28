@@ -1,0 +1,24 @@
+services:
+  users-management:
+    build: .
+    ports:
+      # תיקון 1: מפנים את פורט 8080 של המחשב לפורט 3000 הפנימי של האפליקציה
+      - "8080:3000"
+    environment:
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      # תיקון 2: שינוי השם ל-MONGO_URI שיתאים בדיוק לקוד של האפליקציה
+      - MONGO_URI=mongodb://mongo:27017/docker-challenge
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

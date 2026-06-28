@@ -1,0 +1,12 @@
+requests.http
+.gitignore
+.dockerignore
+Dockerfile
+README.md
+LICENSE
+.vscode
+.idea
+node_modules
+dist
+.env
+.git
