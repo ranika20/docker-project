@@ -1,4 +1,4 @@
-name: users-management
+name: docker-challenge-master
 
 on:
   push:
