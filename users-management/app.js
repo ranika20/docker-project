@@ -4,6 +4,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const connectdb = require('./config/db');
+const path = require('path');
 require('dotenv').config();
 
 const allowedOrigins = [
@@ -45,6 +46,7 @@ app.listen(port, () => {
   console.log('Use the following endpoint to get the list of users:');
   console.log(`App is running on !!!!! ${port}`);
   console.log(`hello world`);
+  console.log(`App is running on port ${port}`);
 });
 
 app.get('/', (req, res) => {
@@ -54,10 +56,13 @@ app.get('/', (req, res) => {
 app.get('/health', (req, res) => {
   const dbstatus = ['connected', 'disconnected', 'connecting', 'disconnecting'];
   const dbconnect = mongoose.connection.readyState === 1;
-  res.status(dbconnect ? 200 : 500).json({
+  res.status(dbconnect ? 200 : 503).json({
     status: dbconnect ? 'OK' : 'ERROR',
-    database: dbstatus[dbconnect ? 0 : 1],
+    db: dbstatus[mongoose.connection.readyState],
     message: dbconnect ? 'Database connection is healthy.' : 'Database connection is not healthy.',
+    runtime: `${Math.floor(process.uptime())}s`,
+    env: process.env.NODE_ENV || 'development'
   });
 });
 
+app.use(express.static(path.join(__dirname, 'public')));
