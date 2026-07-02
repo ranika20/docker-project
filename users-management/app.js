@@ -39,6 +39,7 @@ if (!process.env.JWT_SECRET) {
 app.use('/api/users', userRouters);
 // app.use('/api/users', userRouters);
 // "http://localhost:3000/api/users"
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
@@ -48,10 +49,10 @@ app.listen(port, () => {
   console.log(`hello world`);
   console.log(`App is running on port ${port}`);
 });
+//app.get('/', (req, res) => {
 
-app.get('/', (req, res) => {
-  res.send('Welcome to the User Management API!');
-});
+ //res.send('Welcome to the User Management API!');
+//});
 
 app.get('/health', (req, res) => {
   const dbstatus = ['connected', 'disconnected', 'connecting', 'disconnecting'];
@@ -62,7 +63,7 @@ app.get('/health', (req, res) => {
     message: dbconnect ? 'Database connection is healthy.' : 'Database connection is not healthy.',
     runtime: `${Math.floor(process.uptime())}s`,
     env: process.env.NODE_ENV || 'development'
+
   });
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
