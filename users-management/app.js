@@ -6,14 +6,34 @@ const mongoose = require('mongoose');
 const connectdb = require('./config/db');
 require('dotenv').config();
 
+const allowedOrigins = [
+  'http://127.0.0.1:5501',
+  'http://localhost:3000',
+  'http://localhost:3001',
+  process.env.RENDER_EXTERNAL_URL
+].filter(Boolean);
+
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
 // מייבאים את הראוטר שכתבנו קודם
 const userRouters = require('./routes/users');
 connectdb();
+
+if (!process.env.JWT_SECRET) {
+  console.log('JWT_SECRET is not defined in the environment variables. Please set it to a secure value.');
+  process.exit(1);
+}
 
 app.use('/api/users', userRouters);
 // app.use('/api/users', userRouters);
@@ -28,7 +48,16 @@ app.listen(port, () => {
 });
 
 app.get('/', (req, res) => {
-res.send('Welcome to the User Management API!');
-  
-  
+  res.send('Welcome to the User Management API!');
 });
+
+app.get('/health', (req, res) => {
+  const dbstatus = ['connected', 'disconnected', 'connecting', 'disconnecting'];
+  const dbconnect = mongoose.connection.readyState === 1;
+  res.status(dbconnect ? 200 : 500).json({
+    status: dbconnect ? 'OK' : 'ERROR',
+    database: dbstatus[dbconnect ? 0 : 1],
+    message: dbconnect ? 'Database connection is healthy.' : 'Database connection is not healthy.',
+  });
+});
+
