@@ -1,5 +1,6 @@
 // api.js
-const API_URL = 'http://localhost:3000/api/users'; 
+//const API_URL = 'http://localhost:3000/api/users'; 
+const API_URL = '/api/users';
 
 // תפיסת האלמנטים מה-HTML
 const usersGrid = document.getElementById('usersGrid');
